@@ -11,9 +11,9 @@ install:
 
 script: 
   - dotnet build -c Release
-  - dotnet pack PlusUltra.Nuget.HelloWorld.csproj --output /pkg/ --verbosity Detailed
+  - dotnet pack PlusUltra.Nuget.HelloWorld.csproj --output pkg
 
 deploy:
   skip_cleanup: true
   provider: script
-  script: dotnet nuget push /pkg/*.nupkg --source $NUGET_SOURCE --api-key 630d6ad2b55e9ae849039d564f5190930ad52326
+  script: dotnet nuget push pkg/*.nupkg --source $NUGET_SOURCE --api-key $NUGET_API_KEY
