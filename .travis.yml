@@ -12,12 +12,9 @@ script:
   - dotnet build -c Release
   - dotnet pack PlusUltra.Nuget.HelloWorld.csproj --output pkg
 
-before_deploy:
-  - nuget source Add -Name "GitHub" -Source $NUGET_SOURCE -UserName alefcarlos -Password $NUGET_API_KEY
-
 deploy:
   skip_cleanup: true
   provider: script
-  script: dotnet nuget push ./pkg/PlusUltra.Nuget.HelloWorld.1.0.0.nupkg --source "GitHub"
+  script: nuget source Add -Name "GitHub" -Source $NUGET_SOURCE -UserName alefcarlos -Password $NUGET_API_KEY && dotnet nuget push ./pkg/PlusUltra.Nuget.HelloWorld.1.0.0.nupkg --source "GitHub"
   on:
     branch: master
