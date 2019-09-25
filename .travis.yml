@@ -14,7 +14,7 @@ install:
 
 script: 
   - dotnet build -c Release
-  - dotnet pack PlusUltra.Nuget.HelloWorld.csproj --output pkg /p:/p:PackageVersion=$PACKAGE_VERSION
+  - dotnet pack PlusUltra.Nuget.HelloWorld.csproj --output pkg /p:PackageVersion=$PACKAGE_VERSION
 
 deploy:
   skip_cleanup: true
