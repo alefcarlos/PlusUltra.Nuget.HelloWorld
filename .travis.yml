@@ -20,6 +20,6 @@ before_deploy:
 deploy:
   skip_cleanup: true
   provider: script
-  script: dotnet nuget push ./pkg/PlusUltra.Nuget.HelloWorld.1.0.0.nupkg -Source "GitHub"
+  script: dotnet nuget.exe push ./pkg/PlusUltra.Nuget.HelloWorld.1.0.0.nupkg -Source "GitHub"
   on:
     branch: master
