@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/alefcarlos/PlusUltra.Nuget.HelloWorld.svg?branch=master)](https://travis-ci.org/alefcarlos/PlusUltra.Nuget.HelloWorld/)
+[![Build Status](https://alefcarlos.visualstudio.com/PlusUltra/_apis/build/status/alefcarlos.PlusUltra.Nuget.HelloWorld?branchName=master)](https://alefcarlos.visualstudio.com/PlusUltra/_build/latest?definitionId=1&branchName=master)
 
 # PlusUltra.Nuget.HelloWorld
 
