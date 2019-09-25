@@ -15,11 +15,11 @@ script:
 
 before_deploy:
   # Set up Nuget sources
-  - mono nuget source Add -Name "GitHub" -Source $NUGET_SOURCE -UserName alefcarlos -Password $NUGET_API_KEY
+  - mono nuget.exe source Add -Name "GitHub" -Source $NUGET_SOURCE -UserName alefcarlos -Password $NUGET_API_KEY
 
 deploy:
   skip_cleanup: true
   provider: script
-  script: dotnet nuget.exe push ./pkg/PlusUltra.Nuget.HelloWorld.1.0.0.nupkg -Source "GitHub"
+  script: dotnet nuget push ./pkg/PlusUltra.Nuget.HelloWorld.1.0.0.nupkg -Source "GitHub"
   on:
     branch: master
