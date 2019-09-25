@@ -1,2 +1,3 @@
 # PlusUltra.Nuget.HelloWorld
-GitHub Nuget Package example 
+
+It is an example using new GitHub Packages with Nuget packages
