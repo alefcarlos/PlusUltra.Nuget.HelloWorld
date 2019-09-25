@@ -13,8 +13,7 @@ script:
   - dotnet pack PlusUltra.Nuget.HelloWorld.csproj --output pkg
 
 before_deploy:
-  # Set up Nuget sources
-  - mono nuget.exe source Add -Name "GitHub" -Source $NUGET_SOURCE -UserName alefcarlos -Password $NUGET_API_KEY
+  - nuget source Add -Name "GitHub" -Source $NUGET_SOURCE -UserName alefcarlos -Password $NUGET_API_KEY
 
 deploy:
   skip_cleanup: true
