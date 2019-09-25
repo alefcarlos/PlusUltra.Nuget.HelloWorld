@@ -15,7 +15,7 @@ script:
 
 before_deploy:
   # Set up Nuget sources
-  - nuget source Add -Name "GitHub" -Source $NUGET_SOURCE -UserName alefcarlos -Password $NUGET_API_KEY
+  - mono nuget source Add -Name "GitHub" -Source $NUGET_SOURCE -UserName alefcarlos -Password $NUGET_API_KEY
 
 deploy:
   skip_cleanup: true
