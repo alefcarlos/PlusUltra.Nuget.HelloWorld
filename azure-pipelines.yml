@@ -35,6 +35,7 @@ jobs:
       command: pack
       versioningScheme: byBuildNumber
   - task: DotNetCoreCLI@2
+    displayName: 'Dotnet Push'
     inputs:
       command: 'push'
       packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
