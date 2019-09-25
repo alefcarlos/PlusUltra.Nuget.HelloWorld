@@ -1,5 +1,9 @@
 language: csharp
+mono: none
 dotnet: 2.2.300
+
+env:
+  - PACKAGE_VERSION="1.0.2"
 
 branches:
   only:
@@ -10,11 +14,11 @@ install:
 
 script: 
   - dotnet build -c Release
-  - dotnet pack PlusUltra.Nuget.HelloWorld.csproj --output pkg
+  - dotnet pack PlusUltra.Nuget.HelloWorld.csproj --output pkg /p:/p:PackageVersion=$PACKAGE_VERSION
 
 deploy:
   skip_cleanup: true
   provider: script
-  script: nuget source Add -Name "GitHub" -Source $NUGET_SOURCE -UserName alefcarlos -Password $NUGET_API_KEY && dotnet nuget push ./pkg/PlusUltra.Nuget.HelloWorld.1.0.0.nupkg --source "GitHub"
+  script:  dotnet nuget push ./pkg/PlusUltra.Nuget.HelloWorld.$PACKAGE_VERSION.nupkg --source "GitHub"
   on:
     branch: master
