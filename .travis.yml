@@ -16,4 +16,4 @@ script:
 deploy:
   skip_cleanup: true
   provider: script
-  script: dotnet nuget push pkg/*.nupkg --source $NUGET_SOURCE --api-key $NUGET_API_KEY
+  script: chmod +x ./deploy.sh
