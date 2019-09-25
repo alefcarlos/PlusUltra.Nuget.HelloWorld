@@ -34,9 +34,9 @@ jobs:
     inputs:
       command: pack
       versioningScheme: byBuildNumber
-
   - task: DotNetCoreCLI@2
-    displayName: 'Dotnet Push'
     inputs:
-      command: push
-      publishVstsFeed: 'd49bcaf0-0f1a-4ea5-baae-d1783f9f1d25'
+      command: 'push'
+      packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
+      nuGetFeedType: 'external'
+      publishFeedCredentials: 'GitHub'
